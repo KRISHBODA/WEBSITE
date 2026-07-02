@@ -1,0 +1,69 @@
+@use 'variables' as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 26px;
+  font-family: $sans;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border: 1px solid transparent;
+  border-radius: $radius;
+  cursor: pointer;
+  transition: background $transition, color $transition,
+    border-color $transition, transform $transition;
+
+  &--lg {
+    padding: 16px 34px;
+    font-size: 15px;
+  }
+
+  &--full {
+    width: 100%;
+  }
+
+  &--primary {
+    color: $paper;
+    background: linear-gradient(135deg, $clay 0%, $clay-dark 100%);
+    box-shadow: 0 10px 24px -12px rgba(164, 85, 47, 0.7);
+
+    &:hover {
+      background: linear-gradient(135deg, $clay-dark 0%, $clay-dark 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 14px 28px -12px rgba(164, 85, 47, 0.8);
+    }
+  }
+
+  &--ghost {
+    color: $charcoal;
+    background: transparent;
+    border-color: $line;
+
+    &:hover {
+      border-color: $charcoal;
+    }
+  }
+
+  &--light {
+    color: $charcoal;
+    background: $paper;
+
+    &:hover {
+      background: $cream;
+      transform: translateY(-1px);
+    }
+  }
+}
+
+.hero .btn--ghost {
+  color: $paper;
+  border-color: rgba(255, 255, 255, 0.5);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: $paper;
+  }
+}

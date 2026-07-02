@@ -1,0 +1,259 @@
+@use 'variables' as *;
+
+.footer {
+  background: $forest;
+  color: rgba(245, 241, 230, 0.72);
+  padding: 62px 0 26px;
+
+  &__logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: max-content;
+    margin: 0 auto 62px;
+    text-align: center;
+  }
+
+  &__logo-name {
+    font-family: $logo;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 0.32em;
+    color: $paper;
+    line-height: 1;
+    padding-left: 0.32em;
+  }
+
+  &__logo-tag {
+    margin-top: 12px;
+    font-family: $serif;
+    font-style: italic;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: rgba(245, 241, 230, 0.8);
+  }
+
+  &__main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 0.95fr);
+    gap: 72px;
+    align-items: start;
+  }
+
+  &__info {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr 0.85fr;
+    gap: 44px;
+    align-items: start;
+  }
+
+  &__mission {
+    margin: 0 0 16px;
+    font-size: 16px;
+    color: $paper;
+  }
+
+  &__tagline {
+    max-width: 270px;
+    margin: 0 0 26px;
+    font-size: 13px;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.58);
+  }
+
+  &__socials {
+    display: flex;
+    gap: 12px;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 25px;
+      height: 25px;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: $paper;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 50%;
+      transition: background $transition, border-color $transition;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.12);
+        border-color: $paper;
+      }
+    }
+  }
+
+  &__contact-list {
+    display: grid;
+    gap: 26px;
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    a {
+      font-size: 12px;
+      color: $paper;
+      transition: color $transition;
+
+      &:hover {
+        color: $clay;
+      }
+    }
+  }
+
+  &__contact-label,
+  &__pages h4 {
+    margin: 0 0 8px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.52);
+  }
+
+  &__pages {
+    ul {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    a {
+      font-family: $serif;
+      font-size: 21px;
+      line-height: 1.25;
+      color: $paper;
+      transition: color $transition;
+
+      &:hover {
+        color: $clay;
+      }
+    }
+  }
+
+  &__form {
+    display: grid;
+    gap: 26px;
+    padding: 58px 70px 50px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+
+    label {
+      display: grid;
+      gap: 5px;
+    }
+
+    label > span {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.56);
+    }
+
+    small {
+      color: rgba(255, 255, 255, 0.5);
+      font: inherit;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 8px 0 10px;
+      font-family: $sans;
+      font-size: 13px;
+      color: $paper;
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.26);
+      outline: none;
+      resize: vertical;
+      transition: border-color $transition;
+
+      &:focus {
+        border-bottom-color: rgba(255, 255, 255, 0.75);
+      }
+    }
+
+    select {
+      color: rgba(255, 255, 255, 0.58);
+    }
+  }
+
+  &__consent {
+    grid-template-columns: auto 1fr;
+    align-items: start;
+    gap: 12px;
+
+    input {
+      width: 20px;
+      height: 20px;
+      padding: 0;
+      appearance: none;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: 3px;
+    }
+
+    span {
+      display: block;
+      font-size: 11px;
+      line-height: 1.45;
+      color: rgba(255, 255, 255, 0.7);
+    }
+  }
+
+  &__submit {
+    justify-self: end;
+    min-width: 140px;
+    padding: 14px 26px;
+    font-family: $sans;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: $paper;
+    background: $clay;
+    border: 0;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background $transition, transform $transition;
+
+    &:hover {
+      background: $clay-dark;
+      transform: translateY(-1px);
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    margin-top: 46px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    font-size: 12px;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &__legal {
+    display: flex;
+    gap: 22px;
+
+    a:hover {
+      color: $paper;
+    }
+  }
+}

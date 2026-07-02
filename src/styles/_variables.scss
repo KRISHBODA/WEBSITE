@@ -1,0 +1,43 @@
+// Premium ceramic-tile palette: warm espresso + terracotta + ivory + brass
+// Every neutral carries a warm undertone so the whole scheme feels cohesive.
+$cream: #f7f4ee; // ivory light background
+$sand: #ece3d4; // warm sand
+$paper: #fdfbf7; // porcelain surface
+$charcoal: #211b16; // warm espresso (dark sections + headings)
+$ink: #2f2922; // body text on light
+$stone: #857a6d; // muted taupe secondary text
+$clay: #c06a43; // terracotta accent
+$clay-dark: #a4552f; // deep terracotta (hover)
+$clay-soft: rgba(192, 106, 67, 0.12);
+$brass: #bd9560; // brass/gold fine detail
+$cream-dim: rgba(247, 244, 238, 0.72); // warm text on dark
+$line: rgba(33, 27, 22, 0.13);
+$line-soft: rgba(33, 27, 22, 0.07);
+
+// Dark surfaces
+$forest: #1c1712; // footer / deepest section
+$forest-deep: #14100c;
+$forest-soft: rgba(255, 255, 255, 0.06);
+
+// Effects
+$shadow: 0 30px 70px -35px rgba(24, 17, 12, 0.5);
+$transition: 0.3s ease;
+
+// Shared warm gradient (espresso -> terracotta) for heroes & bands
+$warm-gradient: linear-gradient(135deg, #1c1712 0%, #402c20 50%, #99512e 100%);
+$overlay-dark: rgba(20, 16, 12, 0.82);
+
+// Radii & sizing
+$radius: 6px;
+$radius-lg: 18px;
+$container: 1200px;
+$header-h: 96px;
+
+// Typography
+$serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+$logo: 'Cinzel', 'Playfair Display', Georgia, serif;
+$sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+// Breakpoints
+$bp-md: 980px;
+$bp-sm: 640px;

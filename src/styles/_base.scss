@@ -1,0 +1,58 @@
+@use 'variables' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: $sans;
+  font-size: 16px;
+  line-height: 1.65;
+  color: $stone;
+  background: $cream;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $serif;
+  color: $charcoal;
+  font-weight: 600;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: $container;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: $sans;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: $clay;
+  margin-bottom: 16px;
+
+  &--light {
+    color: rgba(245, 241, 230, 0.75);
+  }
+}

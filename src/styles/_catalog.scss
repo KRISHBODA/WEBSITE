@@ -1,0 +1,296 @@
+@use 'variables' as *;
+
+// Categories (Find Tiles by Category)
+.categories {
+  background: $paper;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+  }
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  background: $cream;
+  border: 1px solid $line-soft;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  transition: transform $transition, box-shadow $transition, border-color $transition;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow;
+    border-color: rgba(191, 106, 69, 0.45);
+  }
+
+  &__media {
+    height: 200px;
+    overflow: hidden;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+
+  &:hover &__img {
+    transform: scale(1.06);
+  }
+
+  &__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 8px;
+    padding: 26px;
+  }
+
+  &__name {
+    font-family: $serif;
+    font-size: 22px;
+    color: $charcoal;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: $stone;
+  }
+
+  &__link {
+    margin-top: auto;
+    padding-top: 14px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: $clay;
+    transition: color $transition;
+  }
+
+  &:hover &__link {
+    color: $clay-dark;
+  }
+}
+
+// Named collections grid
+.collection-grid {
+  background: $sand;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+  }
+}
+
+.collection-tile {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 3;
+  border-radius: $radius-lg;
+  overflow: hidden;
+
+  &__media {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  &:hover &__media {
+    transform: scale(1.06);
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 4px;
+    padding: 24px;
+    background: linear-gradient(
+      to top,
+      rgba(18, 15, 13, 0.85) 0%,
+      rgba(18, 15, 13, 0.18) 55%,
+      transparent 100%
+    );
+    color: $paper;
+  }
+
+  &__name {
+    font-family: $serif;
+    font-size: 24px;
+  }
+
+  &__tagline {
+    font-size: 13px;
+    color: rgba(245, 241, 230, 0.82);
+  }
+}
+
+// Browse tiles by finish / size / color
+.browse {
+  background: $paper;
+
+  &__tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 40px;
+  }
+
+  &__tab {
+    padding: 11px 26px;
+    font-family: $sans;
+    font-size: 14px;
+    font-weight: 600;
+    color: $stone;
+    background: $cream;
+    border: 1px solid $line-soft;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: color $transition, background $transition, border-color $transition;
+
+    &.is-active {
+      color: $paper;
+      background: $charcoal;
+      border-color: $charcoal;
+    }
+
+    &:hover:not(.is-active) {
+      color: $charcoal;
+      border-color: rgba(28, 25, 23, 0.3);
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  &__chip {
+    padding: 10px 22px;
+    font-size: 14px;
+    color: $ink;
+    background: $cream;
+    border: 1px solid $line;
+    border-radius: $radius;
+    transition: border-color $transition, color $transition;
+
+    &:hover {
+      color: $clay-dark;
+      border-color: rgba(191, 106, 69, 0.5);
+    }
+  }
+}
+
+// Stats band (light, elegant)
+.stats-band {
+  background: $cream;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: $paper;
+    border-top: 1px solid $line;
+    border-left: 1px solid $line;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    box-shadow: $shadow;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 40px 32px;
+    border-right: 1px solid $line;
+    border-bottom: 1px solid $line;
+  }
+
+  &__value {
+    font-family: $serif;
+    font-size: clamp(2.1rem, 4vw, 3rem);
+    color: $clay;
+    line-height: 1;
+  }
+
+  &__label {
+    font-size: 15px;
+    font-weight: 700;
+    color: $charcoal;
+  }
+
+  &__detail {
+    font-size: 13px;
+    line-height: 1.6;
+    color: $stone;
+  }
+}
+
+// CTA band
+.cta-band {
+  padding: 56px 0;
+  background: $warm-gradient;
+  color: $paper;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+
+  &__title {
+    margin: 12px 0 10px;
+    font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+    color: $paper;
+  }
+
+  &__text {
+    max-width: 520px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(245, 241, 230, 0.85);
+  }
+}
+
+@media (max-width: $bp-md) {
+  .categories__grid,
+  .collection-grid__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-band__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cta-band__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: $bp-sm) {
+  .categories__grid,
+  .collection-grid__grid,
+  .stats-band__grid {
+    grid-template-columns: 1fr;
+  }
+}
