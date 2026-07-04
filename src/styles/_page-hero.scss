@@ -3,7 +3,7 @@
 .page-hero {
   padding: 130px 0 56px;
   background: $warm-gradient;
-  color: $paper;
+  color: $charcoal;
 
   &__inner {
     max-width: 760px;
@@ -16,14 +16,14 @@
     font-weight: 600;
     letter-spacing: 0.24em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.82);
+    color: $clay;
   }
 
   &__title {
     margin-bottom: 18px;
     font-size: clamp(2.2rem, 5vw, 3.6rem);
     line-height: 1.1;
-    color: $paper;
+    color: $charcoal;
   }
 
   &__subtitle {
@@ -31,7 +31,7 @@
     margin: 0;
     font-size: 17px;
     line-height: 1.75;
-    color: rgba(255, 255, 255, 0.86);
+    color: rgba(20, 28, 24, 0.72);
   }
 }
 

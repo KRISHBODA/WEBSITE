@@ -37,6 +37,21 @@
     }
   }
 
+  &--secondary {
+    color: $charcoal;
+    background: rgba(20, 28, 24, 0.04);
+    border-color: rgba(20, 28, 24, 0.2);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    &:hover {
+      background: $brass;
+      border-color: $brass;
+      color: #141c18;
+      transform: translateY(-1px);
+    }
+  }
+
   &--ghost {
     color: $charcoal;
     background: transparent;

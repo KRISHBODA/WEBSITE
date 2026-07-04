@@ -15,8 +15,8 @@
     background-size: cover;
     background-position: center;
     opacity: 0;
-    transform: scale(1.08);
-    transition: opacity 1.1s ease, transform 6s ease;
+    transform: scale(1.1);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 6s cubic-bezier(0.16, 1, 0.3, 1);
 
     &.is-active {
       opacity: 1;
@@ -29,100 +29,138 @@
     inset: 0;
     background: linear-gradient(
       90deg,
-      rgba(18, 15, 13, 0.82) 0%,
-      rgba(18, 15, 13, 0.5) 52%,
-      rgba(18, 15, 13, 0.2) 100%
+      rgba(7, 10, 8, 0.88) 0%,
+      rgba(7, 10, 8, 0.6) 45%,
+      rgba(7, 10, 8, 0.2) 100%
     );
   }
 
   &__inner {
     position: relative;
     z-index: 2;
-    max-width: 720px;
+    max-width: 800px;
     padding-top: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  &__eyebrow {
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.85);
-    padding: 8px 18px;
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    border-radius: 100px;
-    margin-bottom: 28px;
+  &__reveal-eyebrow {
+    opacity: 0;
+    transform: translateY(12px);
+    animation: heroFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
   }
 
   &__title {
-    font-size: clamp(2.6rem, 6vw, 4.4rem);
-    line-height: 1.08;
+    font-size: clamp(2.8rem, 6.5vw, 4.8rem);
+    line-height: 1.1;
     color: $paper;
-    margin-bottom: 24px;
-    letter-spacing: -0.01em;
+    margin-bottom: 26px;
+    letter-spacing: -0.015em;
+  }
+
+  &__word-wrap {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+  }
+
+  &__word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(100%) skewY(4deg);
+    animation: heroWordReveal 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   &__subtitle {
-    max-width: 540px;
-    font-size: 18px;
+    max-width: 580px;
+    font-size: clamp(16px, 2.2vw, 18px);
     line-height: 1.7;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 38px;
+    color: rgba(255, 255, 255, 0.82);
+    margin-bottom: 42px;
+    opacity: 0;
+    transform: translateY(15px);
+    animation: heroFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
   }
 
   &__actions {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
-    margin-bottom: 48px;
+    margin-bottom: 24px;
+    opacity: 0;
+    transform: translateY(15px);
+    animation: heroFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+  }
+
+  &__footer {
+    width: 100%;
+    margin-top: 40px;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: heroFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.8s forwards;
   }
 
   &__dots {
     display: flex;
-    gap: 12px;
+    gap: 14px;
   }
 
   &__dot {
-    width: 34px;
-    height: 4px;
+    position: relative;
+    width: 50px;
+    height: 3px;
     padding: 0;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.16);
     border: 0;
-    border-radius: 2px;
     cursor: pointer;
+    overflow: hidden;
     transition: background $transition;
 
     &.is-active {
-      background: $clay;
+      background: rgba(255, 255, 255, 0.25);
     }
+
+    &:hover:not(.is-active) {
+      background: rgba(255, 255, 255, 0.4);
+    }
+  }
+
+  &__dot-progress {
+    position: absolute;
+    inset: 0 100% 0 0;
+    background: $brass;
+  }
+
+  &__dot.is-active &__dot-progress {
+    animation: heroIndicatorProgress 6s linear forwards;
   }
 
   &__nav {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 56px;
-    height: 56px;
+    width: 60px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(20, 16, 12, 0.35);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(13, 19, 16, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 50%;
     color: $paper;
     cursor: pointer;
     z-index: 10;
-    transition: background $transition, color $transition, border-color $transition, transform $transition;
+    transition: background $transition, border-color $transition, color $transition, transform $transition;
 
     svg {
       transition: transform $transition;
     }
 
     &:hover {
-      background: rgba(20, 16, 12, 0.55);
+      background: rgba(13, 19, 16, 0.7);
       border-color: $brass;
       color: $brass;
       transform: translateY(-50%) scale(1.05);
@@ -145,16 +183,16 @@
     }
 
     &--prev {
-      left: 40px;
+      left: 48px;
     }
 
     &--next {
-      right: 40px;
+      right: 48px;
     }
 
     @media (max-width: $bp-md) {
-      width: 48px;
-      height: 48px;
+      width: 50px;
+      height: 50px;
       
       &--prev {
         left: 20px;
@@ -166,7 +204,7 @@
 
     @media (max-width: $bp-sm) {
       top: auto;
-      bottom: 30px;
+      bottom: 40px;
       transform: none;
       
       &:hover {
@@ -187,14 +225,47 @@
   }
 }
 
+// Animations
+@keyframes heroWordReveal {
+  from {
+    opacity: 0;
+    transform: translateY(100%) skewY(4deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) skewY(0);
+  }
+}
+
+@keyframes heroFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroIndicatorProgress {
+  to {
+    right: 0%;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .hero__nav {
-    transition: none !important;
-    svg {
-      transition: none !important;
-    }
-    &:hover {
-      transform: translateY(-50%) !important;
-    }
+  .hero__word {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .hero__reveal-eyebrow,
+  .hero__subtitle,
+  .hero__actions,
+  .hero__footer {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .hero__dot-progress {
+    animation: none !important;
+    right: 0 !important;
   }
 }

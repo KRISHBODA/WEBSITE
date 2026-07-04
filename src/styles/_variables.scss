@@ -1,41 +1,42 @@
-// Highly Refined Luxury Palette for "TERRA Fine Surfaces"
-// Inspired by natural stones, travertine sand, charcoal slate, and terracotta.
-$paper: #fcfbfa;        // Pure warm white (porcelain/marble surface)
-$cream: #f6f3eb;        // Soft alabaster/travertine background
-$sand: #e6dfd3;         // Cashmere warm gray/sand neutral
-$charcoal: #1c1815;     // Deep slate charcoal for headings and dark areas
-$ink: #2b2520;          // Deep espresso black for body text
-$stone: #8c8273;        // Muted taupe/stone secondary text
-$clay: #a65233;         // Tuscan Burnt Sienna (earthy, sophisticated terracotta)
-$clay-dark: #8c4227;    // Deeper rust for hover states
-$clay-soft: rgba(166, 82, 51, 0.08);
-$brass: #c5a17a;        // Fine brushed champagne/gold detail accent
-$cream-dim: rgba(246, 243, 235, 0.75);
-$line: rgba(28, 24, 21, 0.08);
-$line-soft: rgba(28, 24, 21, 0.04);
+// Refined Luxury Palette inspired by Vantara (Forest & Slate) and fine tiles
+$paper: #fdfcfb;        // Warm porcelain white
+$cream: #f7f5ef;        // Travertine cream
+$sand: #e8e2d5;         // Alabaster sand
+$charcoal: #141c18;     // Rich forest charcoal for headings
+$ink: #232c27;          // Deep pine ink for body text
+$stone: #78857e;        // Muted sage stone for captions and borders
+$clay: #a65233;         // Terracotta Sienna Clay accent
+$clay-dark: #883e22;    // Earthy brown for hover states
+$clay-soft: rgba(166, 82, 51, 0.06);
+$brass: #d4af37;        // Pure Brushed Gold/Champagne Detail Accent (Vantara style)
+$brass-soft: rgba(212, 175, 55, 0.15);
+$cream-dim: rgba(247, 245, 239, 0.78);
+$line: rgba(20, 28, 24, 0.08);
+$line-soft: rgba(20, 28, 24, 0.04);
 
-// Dark background surfaces (cohesive with charcoal)
-$forest: #1c1815;       // Consistent slate for dark backgrounds
-$forest-deep: #14110f;  // Deepest obsidian for dark sections
-$forest-soft: rgba(255, 255, 255, 0.05);
+// Premium Travertine Light Backgrounds
+$forest: #f6f3eb;       // Warm cream travertine
+$forest-deep: #fdfcf9;  // Pure warm porcelain white
+$forest-soft: rgba(20, 28, 24, 0.05);
 
 // Effects
-$shadow: 0 30px 70px -35px rgba(20, 16, 12, 0.5);
-$transition: 0.3s ease;
+$shadow: 0 25px 60px -30px rgba(20, 28, 24, 0.15);
+$shadow-lg: 0 45px 95px -40px rgba(20, 28, 24, 0.22);
+$transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1); // Premium smooth easing
 
-// Shared warm gradient (espresso -> warm sienna) for premium look (driven by variables)
-$warm-gradient: linear-gradient(135deg, $forest-deep 0%, #3a241b 60%, $clay 100%);
-$overlay-dark: rgba(20, 16, 12, 0.82);
+// Dynamic Premium Gradient (porcelain -> cream -> alabaster sand)
+$warm-gradient: linear-gradient(135deg, $forest-deep 0%, #f7f5ef 60%, #e8e2d5 100%);
+$overlay-dark: rgba(20, 28, 24, 0.75);
 
-// Radii & sizing
-$radius: 6px;
-$radius-lg: 18px;
-$container: 1200px;
-$header-h: 96px;
+// Sizing
+$radius: 4px;
+$radius-lg: 16px;
+$container: 1240px;
+$header-h: 90px;
 
 // Typography
-$serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
-$logo: 'Cinzel', 'Playfair Display', Georgia, serif;
+$serif: 'Playfair Display', Georgia, serif;
+$logo: 'Cinzel', 'Playfair Display', serif;
 $sans: 'Inter', system-ui, -apple-system, sans-serif;
 
 // Breakpoints

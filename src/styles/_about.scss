@@ -1,11 +1,11 @@
 @use 'variables' as *;
 
 .about {
-  background: $charcoal;
-  color: rgba(247, 244, 238, 0.75);
+  background: $cream;
+  color: rgba(20, 28, 24, 0.75);
 
   .section__title {
-    color: $paper;
+    color: $charcoal;
   }
 
   &__inner {
@@ -26,7 +26,7 @@
     margin: 0;
     padding: 48px;
     border-left: 3px solid $clay;
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(20, 28, 24, 0.03);
     border-radius: 0 $radius-lg $radius-lg 0;
 
     blockquote {
@@ -34,7 +34,7 @@
       font-family: $serif;
       font-size: clamp(1.3rem, 2.6vw, 1.9rem);
       line-height: 1.5;
-      color: $paper;
+      color: $charcoal;
     }
   }
 
@@ -42,7 +42,7 @@
     display: block;
     font-family: $serif;
     font-size: 18px;
-    color: $paper;
+    color: $charcoal;
   }
 
   &__role {
@@ -55,7 +55,7 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    border-top: 1px solid rgba(20, 28, 24, 0.12);
   }
 }
 
@@ -67,7 +67,7 @@
   &__value {
     font-family: $serif;
     font-size: clamp(2rem, 4vw, 2.8rem);
-    color: $paper;
+    color: $clay;
     line-height: 1;
   }
 
@@ -75,6 +75,6 @@
     font-size: 13px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: rgba(247, 244, 238, 0.6);
+    color: rgba(20, 28, 24, 0.6);
   }
 }

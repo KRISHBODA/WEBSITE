@@ -23,11 +23,11 @@
   &:hover {
     transform: translateY(-4px);
     box-shadow: $shadow;
-    border-color: rgba(191, 106, 69, 0.45);
+    border-color: rgba(212, 175, 55, 0.35); // Soft gold hover border
   }
 
   &__media {
-    height: 200px;
+    height: 220px;
     overflow: hidden;
   }
 
@@ -36,11 +36,11 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.6s ease;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   &:hover &__img {
-    transform: scale(1.06);
+    transform: scale(1.08);
   }
 
   &__body {
@@ -66,9 +66,10 @@
   &__link {
     margin-top: auto;
     padding-top: 14px;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.02em;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
     color: $clay;
     transition: color $transition;
   }
@@ -103,11 +104,11 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.5s ease;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   &:hover &__media {
-    transform: scale(1.06);
+    transform: scale(1.08);
   }
 
   &__overlay {
@@ -120,11 +121,11 @@
     padding: 24px;
     background: linear-gradient(
       to top,
-      rgba(18, 15, 13, 0.85) 0%,
-      rgba(18, 15, 13, 0.18) 55%,
+      rgba(7, 10, 8, 0.75) 0%,
+      rgba(7, 10, 8, 0.25) 60%,
       transparent 100%
     );
-    color: $paper;
+    color: #ffffff;
   }
 
   &__name {
@@ -134,7 +135,7 @@
 
   &__tagline {
     font-size: 13px;
-    color: rgba(245, 241, 230, 0.82);
+    color: rgba(255, 255, 255, 0.85);
   }
 }
 
@@ -146,18 +147,20 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 40px;
+    gap: 12px;
+    margin-bottom: 44px;
   }
 
   &__tab {
-    padding: 11px 26px;
+    padding: 12px 28px;
     font-family: $sans;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
     color: $stone;
     background: $cream;
-    border: 1px solid $line-soft;
+    border: 1px solid $line;
     border-radius: 100px;
     cursor: pointer;
     transition: color $transition, background $transition, border-color $transition;
@@ -170,7 +173,7 @@
 
     &:hover:not(.is-active) {
       color: $charcoal;
-      border-color: rgba(28, 25, 23, 0.3);
+      border-color: rgba(20, 28, 24, 0.35);
     }
   }
 
@@ -179,22 +182,24 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 12px;
-    max-width: 820px;
+    max-width: 860px;
     margin: 0 auto;
   }
 
   &__chip {
-    padding: 10px 22px;
-    font-size: 14px;
+    padding: 11px 24px;
+    font-size: 13.5px;
     color: $ink;
     background: $cream;
     border: 1px solid $line;
     border-radius: $radius;
-    transition: border-color $transition, color $transition;
+    cursor: pointer;
+    transition: border-color $transition, color $transition, background $transition;
 
     &:hover {
-      color: $clay-dark;
-      border-color: rgba(191, 106, 69, 0.5);
+      color: $clay;
+      border-color: rgba(166, 82, 51, 0.5);
+      background: $paper;
     }
   }
 }
@@ -225,7 +230,7 @@
 
   &__value {
     font-family: $serif;
-    font-size: clamp(2.1rem, 4vw, 3rem);
+    font-size: clamp(2.2rem, 4.5vw, 3.2rem);
     color: $clay;
     line-height: 1;
   }
@@ -245,9 +250,9 @@
 
 // CTA band
 .cta-band {
-  padding: 56px 0;
+  padding: 64px 0;
   background: $warm-gradient;
-  color: $paper;
+  color: $charcoal;
 
   &__inner {
     display: flex;
@@ -257,17 +262,1516 @@
   }
 
   &__title {
-    margin: 12px 0 10px;
-    font-size: clamp(1.8rem, 3.4vw, 2.6rem);
-    color: $paper;
+    margin: 12px 0 12px;
+    font-size: clamp(1.8rem, 3.6vw, 2.8rem);
+    color: $charcoal;
   }
 
   &__text {
-    max-width: 520px;
+    max-width: 540px;
     margin: 0;
-    font-size: 16px;
-    line-height: 1.7;
-    color: rgba(245, 241, 230, 0.85);
+    font-size: 15px;
+    line-height: 1.75;
+    color: rgba(20, 28, 24, 0.72);
+  }
+}
+
+// Catalog Page Filters Sidebar Grid (Marfil details + Vantara styles)
+.catalog {
+  margin-top: 24px;
+  
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 20px 32px;
+    border-radius: $radius-lg;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(20, 28, 24, 0.08);
+    background: $paper;
+    border: 1px solid rgba(20, 28, 24, 0.06);
+  }
+
+  &__search-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(20, 28, 24, 0.03);
+    border: 1px solid rgba(20, 28, 24, 0.08);
+    border-radius: 100px;
+    padding: 10px 22px;
+    flex: 1;
+    min-width: 280px;
+    max-width: 540px;
+    transition: border-color $transition, background $transition;
+
+    svg {
+      color: rgba(20, 28, 24, 0.4);
+    }
+
+    input {
+      flex: 1;
+      background: none;
+      border: none;
+      color: $charcoal;
+      font: inherit;
+      font-size: 14px;
+      outline: none;
+
+      &::placeholder {
+        color: rgba(20, 28, 24, 0.4);
+      }
+    }
+
+    &:focus-within {
+      border-color: $brass;
+      background: rgba(20, 28, 24, 0.05);
+    }
+  }
+
+  &__search-clear {
+    background: none;
+    border: none;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: $clay;
+    cursor: pointer;
+  }
+
+  &__summary {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &__count {
+    font-size: 14px;
+    color: rgba(20, 28, 24, 0.6);
+    
+    strong {
+      color: $charcoal;
+    }
+  }
+
+  &__clear-btn {
+    background: none;
+    border: none;
+    font-family: $sans;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: $clay;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color $transition;
+
+    &:hover {
+      color: $charcoal;
+    }
+  }
+
+  &__mobile-toggle {
+    display: none;
+  }
+
+  &__layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  &__sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-radius: $radius-lg;
+    padding: 24px;
+    background: rgba(20, 28, 24, 0.015);
+    border: 1px solid rgba(20, 28, 24, 0.06);
+    box-shadow: 0 15px 45px rgba(20, 28, 24, 0.04);
+  }
+
+  &__empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 32px;
+    border: 2px dashed rgba(20, 28, 24, 0.1);
+    border-radius: $radius-lg;
+    color: rgba(20, 28, 24, 0.6);
+
+    svg {
+      color: $clay;
+    }
+
+    h3 {
+      font-size: 22px;
+      color: $charcoal;
+      margin: 20px 0 8px 0;
+    }
+
+    p {
+      font-size: 14.5px;
+      margin-bottom: 24px;
+      max-width: 360px;
+    }
+  }
+}
+
+// Collapsible Filter Accordions (Marfil Catalog UI)
+.filter-accordion {
+  border-bottom: 1px solid rgba(20, 28, 24, 0.06);
+  padding: 18px 0;
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: none;
+    border: none;
+    font-family: $sans;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: $charcoal;
+    cursor: pointer;
+    padding: 0;
+    text-align: left;
+    transition: color $transition;
+
+    .icon {
+      color: $clay;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    &:hover {
+      color: $clay;
+    }
+  }
+
+  &__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), margin-top 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  &.is-open &__content {
+    max-height: 380px;
+    margin-top: 14px;
+  }
+
+  .filter-group__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.filter-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13.5px;
+  color: rgba(20, 28, 24, 0.75);
+  cursor: pointer;
+  user-select: none;
+  transition: color $transition;
+
+  input {
+    width: 16px;
+    height: 16px;
+    accent-color: $clay;
+    background: rgba(20, 28, 24, 0.05);
+    border: 1px solid rgba(20, 28, 24, 0.15);
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  &:hover {
+    color: $clay;
+  }
+}
+
+// Product Cards Design (Vantara Gold Highlights & Suitability Tags)
+.product-card {
+  cursor: pointer;
+  background: $paper;
+  border: 1px solid rgba(20, 28, 24, 0.08);
+  border-radius: $radius-lg;
+  overflow: hidden;
+  transition: transform $transition, box-shadow $transition, border-color $transition;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-lg;
+    border-color: rgba(212, 175, 55, 0.35); // Gold hover border
+  }
+
+  &__media {
+    position: relative;
+    height: 230px;
+    overflow: hidden;
+    background: $cream;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  }
+
+  &:hover &__media img {
+    transform: scale(1.08);
+  }
+
+  &__type-badge {
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
+    padding: 6px 14px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: $clay;
+    border-radius: 100px;
+    box-shadow: 0 4px 10px rgba(20, 28, 24, 0.12);
+    z-index: 1;
+  }
+
+  &__quick-view {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity $transition;
+    z-index: 2;
+  }
+
+  .quick-view-btn {
+    background: $charcoal;
+    color: $paper;
+    font-family: $sans;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 10px 22px;
+    border-radius: 100px;
+    box-shadow: $shadow;
+    transform: translateY(10px);
+    transition: transform $transition, background $transition, color $transition;
+  }
+
+  &:hover &__quick-view {
+    opacity: 1;
+    
+    .quick-view-btn {
+      transform: translateY(0);
+    }
+  }
+
+  &:hover .quick-view-btn:hover {
+    background: $brass;
+    color: $charcoal;
+  }
+
+  &__body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      font-size: 19px;
+      line-height: 1.35;
+      color: $charcoal;
+      margin: 4px 0 12px 0;
+    }
+  }
+
+  &__look {
+    font-family: $sans;
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: $clay;
+  }
+
+  // Suitability Badges
+  &__suitability-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 4px 0 18px 0;
+  }
+
+  .suit-badge {
+    font-size: 10px;
+    font-weight: 600;
+    color: rgba(20, 28, 24, 0.7);
+    background: rgba(20, 28, 24, 0.04);
+    border: 1px solid rgba(20, 28, 24, 0.06);
+    padding: 4px 10px;
+    border-radius: 100px;
+  }
+
+  &__specs {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(20, 28, 24, 0.06);
+    padding-top: 14px;
+    margin: 0;
+    gap: 12px;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    dt {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(20, 28, 24, 0.45);
+    }
+
+    dd {
+      margin: 0;
+      font-size: 13px;
+      font-weight: 600;
+      color: $charcoal;
+    }
+  }
+}
+
+// Premium Detail Modal Styles (Kajaria Specs + Vantara Overlay)
+.product-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 28, 24, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.product-modal {
+  position: relative;
+  width: 100%;
+  max-width: 1080px;
+  background: #ffffff;
+  border: 1px solid rgba(20, 28, 24, 0.08);
+  border-radius: $radius-lg;
+  overflow: hidden;
+  box-shadow: 0 30px 90px rgba(20, 28, 24, 0.12);
+  color: $charcoal;
+  max-height: calc(100vh - 48px);
+  display: flex;
+  flex-direction: column;
+
+  &__close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 10;
+    background: rgba(20, 28, 24, 0.05);
+    border: 1px solid rgba(20, 28, 24, 0.08);
+    color: $charcoal;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background $transition, border-color $transition, color $transition, transform $transition;
+
+    &:hover {
+      background: rgba(20, 28, 24, 0.1);
+      border-color: $clay;
+      color: $clay;
+      transform: scale(1.05);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    min-height: 560px;
+    max-height: calc(100vh - 48px);
+  }
+
+  // Left side image details
+  &__media-section {
+    position: relative;
+    background: $cream;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    border-right: 1px solid rgba(20, 28, 24, 0.06);
+  }
+
+  &__image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 450px;
+    overflow: hidden;
+  }
+
+  &__main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(20, 28, 24, 0.08) 0%, transparent 100%);
+  }
+
+  &__view-toggle {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 5;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(20, 28, 24, 0.08);
+    padding: 6px;
+    border-radius: 100px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 24px rgba(20, 28, 24, 0.06);
+  }
+
+  &__toggle-btn {
+    background: none;
+    border: none;
+    font-family: $sans;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(20, 28, 24, 0.65);
+    padding: 8px 16px;
+    border-radius: 100px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color $transition, background $transition;
+
+    svg {
+      opacity: 0.7;
+    }
+
+    &.is-active {
+      background: $clay;
+      color: #ffffff;
+      font-weight: 700;
+
+      svg {
+        opacity: 1;
+      }
+    }
+
+    &:hover:not(.is-active) {
+      color: $charcoal;
+      background: rgba(20, 28, 24, 0.04);
+    }
+  }
+
+  // Right side info panels
+  &__info-section {
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  &__header {
+    margin-bottom: 28px;
+
+    .eyebrow {
+      color: $clay;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__title {
+    font-size: clamp(24px, 3.2vw, 32px);
+    margin-bottom: 8px;
+    color: $charcoal;
+  }
+
+  &__use {
+    font-size: 13.5px;
+    color: rgba(20, 28, 24, 0.65);
+    margin: 0;
+  }
+
+  // Modal Suitability Badges with Icons
+  &__suitability {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .modal-suit-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: $sans;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: $charcoal;
+    background: rgba(166, 82, 51, 0.06);
+    border: 1px solid rgba(166, 82, 51, 0.12);
+    padding: 5px 12px;
+    border-radius: 100px;
+
+    svg {
+      color: $clay;
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid rgba(20, 28, 24, 0.06);
+    margin-bottom: 24px;
+    padding-bottom: 8px;
+  }
+
+  &__tab {
+    background: none;
+    border: none;
+    font-family: $sans;
+    font-size: 11.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(20, 28, 24, 0.45);
+    padding: 8px 0;
+    cursor: pointer;
+    position: relative;
+    transition: color $transition;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -10px;
+      height: 2px;
+      background: $clay;
+      transform: scaleX(0);
+      transition: transform $transition;
+    }
+
+    &.is-active {
+      color: $clay;
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+
+    &:hover:not(.is-active) {
+      color: rgba(20, 28, 24, 0.85);
+    }
+  }
+
+  &__panel {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+}
+
+// Technical Summary & Brochure Download Panel
+.technical-summary-panel {
+  margin-bottom: 24px;
+  background: rgba(20, 28, 24, 0.015);
+  border: 1px solid rgba(20, 28, 24, 0.05);
+  padding: 20px;
+  border-radius: $radius-lg;
+}
+
+.technical-desc {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: rgba(20, 28, 24, 0.7);
+  margin: 0 0 16px 0;
+
+  strong {
+    color: $charcoal;
+  }
+}
+
+.catalogue-download-box {
+  position: relative;
+  width: 100%;
+}
+
+.catalogue-download-btn {
+  &.is-loading {
+    cursor: not-allowed;
+    background: rgba(20, 28, 24, 0.04) !important;
+  }
+
+  &.is-complete {
+    background: rgba(39, 174, 96, 0.08) !important;
+    border-color: #27ae60 !important;
+    color: #27ae60 !important;
+    cursor: default;
+  }
+}
+
+.catalogue-download-bar {
+  width: 100%;
+  height: 3px;
+  background: rgba(20, 28, 24, 0.05);
+  border-radius: 2px;
+  margin-top: 8px;
+  overflow: hidden;
+
+  .fill {
+    height: 100%;
+    background: $clay;
+    transition: width 0.2s ease;
+  }
+}
+
+// specifications table (Kajaria Inspired)
+.specs-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  tr {
+    border-bottom: 1px solid rgba(20, 28, 24, 0.05);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  td {
+    padding: 11px 0;
+    font-size: 13.5px;
+    line-height: 1.4;
+
+    &:first-child {
+      color: rgba(20, 28, 24, 0.45);
+      font-weight: 500;
+      width: 45%;
+    }
+
+    &:last-child {
+      color: $charcoal;
+      font-weight: 600;
+      text-align: right;
+    }
+  }
+}
+
+// Enquiry Success Panel
+.enquiry-success {
+  text-align: center;
+  padding: 32px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__icon {
+    background: rgba(166, 82, 51, 0.06);
+    color: $clay;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    border: 1px solid rgba(166, 82, 51, 0.15);
+    box-shadow: 0 10px 25px rgba(166, 82, 51, 0.06);
+  }
+
+  h3 {
+    font-family: $serif;
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: $charcoal;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: rgba(20, 28, 24, 0.7);
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
+
+// Enquiry Form Panel
+.enquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .form-group-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(20, 28, 24, 0.45);
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 12px 14px;
+    background: rgba(20, 28, 24, 0.02);
+    border: 1px solid rgba(20, 28, 24, 0.08);
+    border-radius: $radius;
+    color: $charcoal;
+    font: inherit;
+    font-size: 13.5px;
+    outline: none;
+    transition: border-color $transition, background $transition, box-shadow $transition;
+
+    &:focus {
+      border-color: $clay;
+      background: rgba(20, 28, 24, 0.04);
+      box-shadow: 0 0 0 3px rgba(166, 82, 51, 0.08);
+    }
+  }
+
+  textarea {
+    min-height: 80px;
+    resize: vertical;
+  }
+}
+
+// Coordinating Tiles Panel
+.coordinating-intro {
+  font-size: 13.5px;
+  color: rgba(20, 28, 24, 0.6);
+  margin-bottom: 20px;
+}
+
+.coordinating-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.coordinating-card {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  background: rgba(20, 28, 24, 0.02);
+  border: 1px solid rgba(20, 28, 24, 0.06);
+  padding: 10px;
+  border-radius: $radius-lg;
+  cursor: pointer;
+  transition: background $transition, border-color $transition;
+
+  &:hover {
+    background: rgba(20, 28, 24, 0.05);
+    border-color: $clay;
+  }
+
+  img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  &__info {
+    h4 {
+      font-family: $sans;
+      font-size: 14.5px;
+      font-weight: 600;
+      color: $charcoal;
+      margin: 0 0 2px 0;
+    }
+
+    span {
+      font-size: 12px;
+      color: rgba(20, 28, 24, 0.45);
+    }
+  }
+}
+
+// Collections Hub (Marfil styled Grouping - Left Sidebar / Right Grid)
+.collections-layout {
+  padding: 80px 0;
+  background: $forest-deep;
+
+  &__grid-wrap {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  &__sidebar {
+    background: $paper;
+    border: 1px solid rgba(20, 28, 24, 0.06);
+    border-radius: $radius-lg;
+    padding: 32px;
+    box-shadow: 0 15px 45px rgba(20, 28, 24, 0.04);
+  }
+
+  &__sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    border-bottom: 1px solid rgba(20, 28, 24, 0.06);
+    padding-bottom: 12px;
+
+    h2 {
+      font-family: $sans;
+      font-size: 13.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: $charcoal;
+      margin: 0;
+    }
+
+    .clear-filters-btn {
+      background: none;
+      border: none;
+      font-family: $sans;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: $clay;
+      cursor: pointer;
+      text-decoration: underline;
+
+      &:hover {
+        color: $charcoal;
+      }
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+
+// Sidebar links selection layout
+.sidebar-filter-group {
+  margin-bottom: 32px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  h3 {
+    font-family: $sans;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(20, 28, 24, 0.45);
+    margin: 0 0 16px 0;
+    border-bottom: 1px solid rgba(20, 28, 24, 0.04);
+    padding-bottom: 6px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .filter-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    font-family: $sans;
+    font-size: 13.5px;
+    color: rgba(20, 28, 24, 0.65);
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    text-align: left;
+    transition: color $transition, transform $transition;
+
+    .arrow {
+      opacity: 0;
+      color: $clay;
+      transform: translateX(-4px);
+      transition: opacity $transition, transform $transition;
+    }
+
+    &:hover,
+    &.is-active {
+      color: $clay;
+      
+      .arrow {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    &.is-active {
+      font-weight: 800;
+    }
+  }
+}
+
+// 3-Column Collections Grid
+.collections-grid-view {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+// Grid Card (Vantara themed circles & media)
+.collections-grid-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background: $paper;
+  border: 1px solid rgba(20, 28, 24, 0.08);
+  transition: transform $transition, box-shadow $transition, border-color $transition;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-lg;
+    border-color: rgba(212, 175, 55, 0.35);
+  }
+
+  .card-media {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    background: $cream;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  }
+
+  &:hover .card-media img {
+    transform: scale(1.08);
+  }
+
+  .card-body {
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    h3 {
+      font-family: $serif;
+      font-size: 22px;
+      color: $charcoal;
+      margin: 0;
+    }
+  }
+
+  // Gold Circle arrow "View More" button trigger
+  .view-more-action {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 4px;
+
+    .circle-arrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: $clay;
+      color: #ffffff;
+      transition: background $transition, transform $transition;
+
+      svg {
+        stroke-width: 3.5px;
+      }
+    }
+
+    .text {
+      font-family: $sans;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: $clay;
+      transition: color $transition;
+    }
+  }
+
+  &:hover {
+    .circle-arrow {
+      background: $charcoal;
+      transform: translateX(4px);
+    }
+    
+    .text {
+      color: $charcoal;
+    }
+  }
+
+  .card-spec-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    border-top: 1px solid rgba(20, 28, 24, 0.06);
+    padding-top: 14px;
+    margin-top: 6px;
+
+    span {
+      font-size: 10.5px;
+      font-weight: 600;
+      color: rgba(20, 28, 24, 0.65);
+      background: rgba(20, 28, 24, 0.04);
+      border: 1px solid rgba(20, 28, 24, 0.06);
+      padding: 4px 10px;
+      border-radius: 100px;
+    }
+  }
+}
+
+.collections-empty-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 32px;
+  border-radius: $radius-lg;
+  border: 1px solid rgba(20, 28, 24, 0.08);
+  color: rgba(20, 28, 24, 0.6);
+
+  svg {
+    color: $clay;
+    margin-bottom: 16px;
+  }
+
+  h3 {
+    font-family: $serif;
+    font-size: 22px;
+    color: $charcoal;
+    margin: 0 0 8px 0;
+  }
+
+  p {
+    font-size: 14.5px;
+    margin-bottom: 24px;
+    max-width: 360px;
+  }
+}
+
+// Catalogue Page Styles (Vantara resources replica)
+.catalogue-layout {
+  padding: 80px 0;
+  background: $forest-deep;
+  min-height: 80vh;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  &__sidebar {
+    background: $paper;
+    border: 1px solid rgba(20, 28, 24, 0.06);
+    border-radius: $radius-lg;
+    padding: 32px;
+    box-shadow: 0 15px 45px rgba(20, 28, 24, 0.04);
+
+    .sidebar-title {
+      font-family: $sans;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(20, 28, 24, 0.45);
+      margin-bottom: 24px;
+      border-bottom: 1px solid rgba(20, 28, 24, 0.06);
+      padding-bottom: 6px;
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__sort-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(20, 28, 24, 0.08);
+    padding-bottom: 18px;
+    margin-bottom: 28px;
+
+    .count-label {
+      font-size: 14px;
+      color: rgba(20, 28, 24, 0.5);
+
+      strong {
+        color: $charcoal;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 44px;
+  }
+}
+
+// Vantara Pill Filters Stack
+.filter-pill-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.filter-pill {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 12px 24px;
+  font-family: $sans;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: rgba(20, 28, 24, 0.72);
+  background: transparent;
+  border: 1px solid rgba(20, 28, 24, 0.12);
+  border-radius: 100px;
+  cursor: pointer;
+  text-align: left;
+  transition: background $transition, border-color $transition, color $transition, transform $transition;
+
+  &:hover {
+    border-color: rgba(20, 28, 24, 0.45);
+    color: $charcoal;
+    transform: translateX(2px);
+  }
+
+  &.is-active {
+    background: $clay;
+    color: #ffffff;
+    border-color: $clay;
+    font-weight: 700;
+
+    &:hover {
+      color: #ffffff;
+      transform: none;
+    }
+  }
+}
+
+// Top Right Sort select dropdown
+.sort-dropdown-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  color: rgba(20, 28, 24, 0.5);
+
+  select {
+    background: rgba(20, 28, 24, 0.03);
+    border: 1px solid rgba(20, 28, 24, 0.08);
+    border-radius: 6px;
+    padding: 6px 14px;
+    color: $charcoal;
+    font-family: $sans;
+    outline: none;
+    cursor: pointer;
+    transition: border-color $transition;
+
+    option {
+      background: $forest-deep;
+      color: $charcoal;
+    }
+
+    &:focus {
+      border-color: $clay;
+    }
+  }
+}
+
+// Horizontal Row Cards list item (vantara.in/en/resources replica)
+.catalogue-row-card {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+  border-bottom: 1px solid rgba(20, 28, 24, 0.08);
+  padding-bottom: 40px;
+
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  &__image-container {
+    width: 260px;
+    height: 165px;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: $cream;
+    box-shadow: 0 10px 25px rgba(20, 28, 24, 0.08);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+  }
+
+  &:hover &__image-container img {
+    transform: scale(1.04);
+  }
+
+  &__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__category {
+    font-family: $sans;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: $clay;
+  }
+
+  &__title {
+    font-family: $serif;
+    font-size: 22px;
+    line-height: 1.35;
+    color: $charcoal;
+    margin: 0;
+    transition: color $transition;
+  }
+
+  &:hover &__title {
+    color: $clay;
+  }
+
+  &__desc {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: rgba(20, 28, 24, 0.65);
+    margin: 2px 0 8px 0;
+    max-width: 660px;
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11.5px;
+    color: rgba(20, 28, 24, 0.45);
+    flex-wrap: wrap;
+
+    .bullet {
+      color: $clay;
+      font-weight: 700;
+    }
+  }
+
+  &__actions {
+    flex-shrink: 0;
+  }
+}
+
+// Download PDF button (rounded outlines + arrow)
+.download-wrapper {
+  position: relative;
+}
+
+.btn-download-pdf {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 28px;
+  font-family: $sans;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 100px;
+  border: 1.5px solid rgba(20, 28, 24, 0.82);
+  background: transparent;
+  color: $charcoal;
+  cursor: pointer;
+  transition: background $transition, border-color $transition, color $transition, transform $transition;
+
+  svg {
+    transition: transform $transition;
+  }
+
+  &:hover {
+    background: $charcoal;
+    color: $paper;
+    border-color: $charcoal;
+    transform: translateY(-1px);
+
+    svg {
+      transform: translateY(1px);
+    }
+  }
+
+  &.is-loading {
+    background: rgba(20, 28, 24, 0.05) !important;
+    border-color: rgba(20, 28, 24, 0.2) !important;
+    color: rgba(20, 28, 24, 0.4) !important;
+    cursor: not-allowed;
+    transform: none !important;
+  }
+
+  &.is-complete {
+    background: rgba(39, 174, 96, 0.08) !important;
+    border-color: #27ae60 !important;
+    color: #27ae60 !important;
+    cursor: default;
+    transform: none !important;
+  }
+}
+
+.download-loader-bar {
+  position: absolute;
+  bottom: -8px;
+  left: 14px;
+  right: 14px;
+  height: 2px;
+  background: rgba(20, 28, 24, 0.06);
+  border-radius: 2px;
+  overflow: hidden;
+
+  .fill {
+    height: 100%;
+    background: $clay;
+    transition: width 0.2s ease;
+  }
+}
+
+.catalogue-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 32px;
+  border: 2px dashed rgba(20, 28, 24, 0.1);
+  border-radius: $radius-lg;
+  color: rgba(20, 28, 24, 0.5);
+
+  svg {
+    color: $clay;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-size: 22px;
+    color: $charcoal;
+    margin: 0 0 8px 0;
+  }
+
+  p {
+    font-size: 14.5px;
+    margin-bottom: 24px;
+    max-width: 360px;
   }
 }
 
@@ -285,6 +1789,110 @@
     flex-direction: column;
     align-items: flex-start;
   }
+
+  .catalog {
+    &__layout {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    &__sidebar {
+      display: none;
+      
+      &.is-visible {
+        display: flex;
+        animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+    }
+
+    &__mobile-toggle {
+      display: inline-block;
+      margin-left: auto;
+    }
+  }
+
+  .collections-layout {
+    &__grid-wrap {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    &__sidebar {
+      padding: 24px;
+    }
+  }
+
+  .collections-grid-view {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .catalogue-layout {
+    &__grid {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+
+    &__sidebar {
+      padding: 24px;
+    }
+  }
+
+  .filter-pill-stack {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .filter-pill {
+    width: auto;
+    padding: 10px 20px;
+    font-size: 12.5px;
+  }
+
+  .catalogue-row-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding-bottom: 32px;
+
+    &__image-container {
+      width: 100%;
+      height: 200px;
+    }
+
+    &__actions {
+      width: 100%;
+      
+      .btn-download-pdf {
+        width: 100%;
+      }
+    }
+  }
+
+  .product-modal {
+    max-height: calc(100vh - 32px);
+
+    &__container {
+      grid-template-columns: 1fr;
+      overflow-y: auto;
+    }
+
+    &__media-section {
+      border-right: none;
+      border-bottom: 1px solid rgba(20, 28, 24, 0.06);
+    }
+
+    &__image-container {
+      min-height: 320px;
+    }
+
+    &__info-section {
+      padding: 32px 24px;
+      max-height: none;
+      overflow-y: visible;
+    }
+  }
 }
 
 @media (max-width: $bp-sm) {
@@ -292,5 +1900,37 @@
   .collection-grid__grid,
   .stats-band__grid {
     grid-template-columns: 1fr;
+  }
+
+  .catalog {
+    &__header {
+      padding: 16px 20px;
+      gap: 16px;
+    }
+    
+    &__search-box {
+      max-width: none;
+      width: 100%;
+    }
+
+    &__summary {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+
+  .collections-grid-view {
+    grid-template-columns: 1fr;
+  }
+
+  .product-modal {
+    &__image-container {
+      min-height: 240px;
+    }
+  }
+
+  .enquiry-form .form-group-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 }

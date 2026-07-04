@@ -8,8 +8,8 @@ type PageLink = {
 
 const pages: PageLink[] = [
   { to: paths.home, label: 'Home' },
-  { to: paths.products, label: 'Products' },
   { to: paths.collections, label: 'Collections' },
+  { to: paths.catalogue, label: 'Catalogue' },
   { to: paths.about, label: 'About' },
   { to: paths.contact, label: 'Contact Us' },
 ]

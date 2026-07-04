@@ -20,7 +20,7 @@ export default function Categories() {
           {categories.map((category) => (
             <Link
               key={category.id}
-              to={paths.products}
+              to={paths.collections}
               className="category-card"
             >
               <span className="category-card__media">

@@ -1,5 +1,7 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { browseGroups } from '../data/tiles'
+import { paths } from '../routes/paths'
 
 export default function BrowseBy() {
   const [active, setActive] = useState(browseGroups[0].id)
@@ -32,11 +34,22 @@ export default function BrowseBy() {
         </div>
 
         <div className="browse__items">
-          {current.items.map((item) => (
-            <span key={item} className="browse__chip">
-              {item}
-            </span>
-          ))}
+          {current.items.map((item) => {
+            let queryParam = ''
+            if (current.id === 'finishes') queryParam = `finish=${encodeURIComponent(item)}`
+            if (current.id === 'sizes') queryParam = `size=${encodeURIComponent(item)}`
+            if (current.id === 'colors') queryParam = `color=${encodeURIComponent(item)}`
+
+            return (
+              <Link
+                key={item}
+                to={`${paths.collections}?${queryParam}`}
+                className="browse__chip"
+              >
+                {item}
+              </Link>
+            )
+          })}
         </div>
       </div>
     </section>

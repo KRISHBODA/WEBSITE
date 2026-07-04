@@ -10,8 +10,8 @@ type NavItem = {
 
 const leftLinks: NavItem[] = [
   { to: paths.home, label: 'Home', end: true },
-  { to: paths.products, label: 'Products' },
   { to: paths.collections, label: 'Collections' },
+  { to: paths.catalogue, label: 'Catalogue' },
 ]
 
 const rightLinks: NavItem[] = [

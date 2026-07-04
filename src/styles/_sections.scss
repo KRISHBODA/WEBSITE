@@ -1,23 +1,29 @@
 @use 'variables' as *;
 
 .section {
-  padding: 72px 0;
+  padding: 80px 0;
 
   &__intro {
     text-align: center;
-    max-width: 640px;
-    margin: 0 auto 44px;
+    max-width: 700px;
+    margin: 0 auto 56px;
+    
+    .eyebrow {
+      margin-bottom: 12px;
+    }
   }
 
   &__title {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(2.2rem, 4.5vw, 3.2rem);
     line-height: 1.15;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.015em;
+    color: $charcoal;
+    margin-bottom: 16px;
   }
 
   &__subtitle {
     margin: 16px 0 0;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.7;
     color: $stone;
   }
@@ -44,7 +50,7 @@
   }
 }
 
-// Highlights
+// Highlights Section (Premium Carousel / Grid)
 .highlights {
   background: $paper;
 
@@ -60,16 +66,17 @@
   border: 1px solid $line-soft;
   border-radius: $radius-lg;
   overflow: hidden;
-  transition: transform $transition, box-shadow $transition;
+  transition: transform $transition, box-shadow $transition, border-color $transition;
 
   &:hover {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
     box-shadow: $shadow;
+    border-color: rgba(212, 175, 55, 0.2); // Soft brass border
   }
 
   &__media {
     position: relative;
-    height: 170px;
+    height: 180px;
     overflow: hidden;
 
     img {
@@ -77,56 +84,57 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.6s ease;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     }
   }
 
   &:hover &__media img {
-    transform: scale(1.06);
+    transform: scale(1.08);
   }
 
   &__tag {
     position: absolute;
-    left: 14px;
-    bottom: 14px;
-    font-size: 11px;
+    left: 16px;
+    bottom: 16px;
+    font-size: 10px;
     font-weight: 600;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: $paper;
     background: $clay;
-    padding: 5px 12px;
+    padding: 6px 14px;
     border-radius: 100px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   }
 
   &__body {
-    padding: 22px 22px 26px;
+    padding: 24px;
   }
 
   &__date {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 600;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: $stone;
   }
 
   &__title {
     font-family: $serif;
-    font-size: 17px;
+    font-size: 18px;
     line-height: 1.4;
     color: $charcoal;
     margin: 12px 0 0;
   }
 }
 
-// Collections
+// Old Collections Layout (kept for backward-compatibility if needed)
 .collections {
   background: $cream;
 
   &__layout {
     display: grid;
-    grid-template-columns: 240px 1fr;
+    grid-template-columns: 260px 1fr;
     gap: 48px;
     align-items: start;
   }
@@ -142,7 +150,7 @@
   &__tab {
     width: 100%;
     text-align: left;
-    padding: 18px 20px;
+    padding: 20px;
     font-family: $serif;
     font-size: 19px;
     color: $stone;
@@ -170,12 +178,13 @@
     background: $paper;
     border: 1px solid $line-soft;
     border-radius: $radius-lg;
-    padding: 36px;
+    padding: 40px;
+    box-shadow: $shadow;
   }
 
   &__media {
     aspect-ratio: 4 / 3;
-    border-radius: $radius;
+    border-radius: $radius-lg;
     overflow: hidden;
 
     img {
@@ -214,5 +223,186 @@
         border-radius: 3px;
       }
     }
+  }
+}
+
+// Interactive Accordion (Vantara Inspired Split Layout)
+.interactive-accordion {
+  background: $cream;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 56px;
+    align-items: stretch;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    border-top: 1px solid $line;
+    padding: 24px 0;
+    cursor: pointer;
+    transition: border-color $transition;
+
+    &:last-child {
+      border-bottom: 1px solid $line;
+    }
+
+    &.is-active {
+      border-top-color: $brass;
+      
+      & + .interactive-accordion__item {
+        border-top-color: $brass;
+      }
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+  }
+
+  &__number {
+    font-family: $sans;
+    font-size: 13px;
+    font-weight: 600;
+    color: $stone;
+    letter-spacing: 0.1em;
+  }
+
+  &__name {
+    font-family: $serif;
+    font-size: clamp(20px, 3.2vw, 24px);
+    color: $stone;
+    transition: color $transition, transform $transition;
+  }
+
+  &__item.is-active &__name {
+    color: $charcoal;
+    transform: translateX(6px);
+  }
+
+  &__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  &__item.is-active &__content {
+    max-height: 220px;
+  }
+
+  &__content-inner {
+    padding: 16px 0 4px 32px;
+  }
+
+  &__tagline {
+    font-family: $serif;
+    font-style: italic;
+    font-size: 15px;
+    color: $clay;
+    margin-bottom: 8px;
+  }
+
+  &__description {
+    font-size: 14px;
+    line-height: 1.65;
+    color: $stone;
+    margin-bottom: 18px;
+    max-width: 500px;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: $charcoal;
+    transition: color $transition;
+
+    .arrow {
+      transition: transform $transition;
+    }
+
+    &:hover {
+      color: $clay;
+
+      .arrow {
+        transform: translateX(4px);
+      }
+    }
+  }
+
+  // Right Side Media Sizing
+  &__media {
+    position: relative;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    box-shadow: $shadow-lg;
+    background: $forest-deep;
+    height: 480px;
+  }
+
+  &__image-wrapper {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: scale(1.06);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+
+    &.is-active {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: auto;
+      z-index: 2;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(7, 10, 8, 0.65) 0%, rgba(7, 10, 8, 0.1) 50%, transparent 100%);
+  }
+
+  &__badge {
+    position: absolute;
+    left: 28px;
+    bottom: 28px;
+    z-index: 3;
+  }
+}
+
+@media (max-width: $bp-md) {
+  .interactive-accordion {
+    &__wrapper {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    &__media {
+      height: 380px;
+      grid-row: 1; // Put image above list on smaller screens
+    }
+  }
+  
+  .collections__layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 }

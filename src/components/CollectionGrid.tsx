@@ -20,7 +20,7 @@ export default function CollectionGrid() {
           {collections.map((collection) => (
             <Link
               key={collection.id}
-              to={paths.contact}
+              to={`${paths.collections}?collection=${collection.id}`}
               className="collection-tile"
             >
               <img

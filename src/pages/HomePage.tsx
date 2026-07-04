@@ -1,29 +1,27 @@
 import Hero from '../components/Hero'
-import Categories from '../components/Categories'
-import CollectionGrid from '../components/CollectionGrid'
-import BrowseBy from '../components/BrowseBy'
+import InteractiveAccordion from '../components/InteractiveAccordion'
 import Stats from '../components/Stats'
 import CtaBand from '../components/CtaBand'
 import Highlights from '../components/Highlights'
-import ProductShowcase from '../components/ProductShowcase'
 import WhyChooseUs from '../components/WhyChooseUs'
 import InspirationGallery from '../components/InspirationGallery'
 import Testimonials from '../components/Testimonials'
+import Categories from '../components/Categories'
 
 export default function HomePage() {
   return (
     <>
       <Hero />
+      <InteractiveAccordion />
       <Categories />
-      <CollectionGrid />
-      <ProductShowcase limit={4} />
       <WhyChooseUs />
       <InspirationGallery />
-      <BrowseBy />
       <Stats />
       <CtaBand
-        title="Locate a store near you"
-        text="With an ever-growing network of dealers, showrooms, and experience centres, quality tiles are always close by."
+        eyebrow="Experience Centres"
+        title="Locate a studio near you"
+        text="With our network of exclusive flagship studios and experience centres, luxury surfaces are always within reach. Step in to touch, feel, and visualize."
+        actionLabel="Find Showroom"
       />
       <Testimonials />
       <Highlights />

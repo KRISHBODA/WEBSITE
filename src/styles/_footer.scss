@@ -2,7 +2,7 @@
 
 .footer {
   background: $forest;
-  color: rgba(245, 241, 230, 0.72);
+  color: rgba(20, 28, 24, 0.72);
   padding: 62px 0 26px;
 
   &__logo {
@@ -19,7 +19,7 @@
     font-size: 32px;
     font-weight: 600;
     letter-spacing: 0.32em;
-    color: $paper;
+    color: $charcoal;
     line-height: 1;
     padding-left: 0.32em;
   }
@@ -31,7 +31,7 @@
     font-size: 13px;
     font-weight: 500;
     letter-spacing: 0.1em;
-    color: rgba(245, 241, 230, 0.8);
+    color: rgba(20, 28, 24, 0.65);
   }
 
   &__main {
@@ -51,7 +51,7 @@
   &__mission {
     margin: 0 0 16px;
     font-size: 16px;
-    color: $paper;
+    color: $charcoal;
   }
 
   &__tagline {
@@ -59,7 +59,7 @@
     margin: 0 0 26px;
     font-size: 13px;
     line-height: 1.65;
-    color: rgba(255, 255, 255, 0.58);
+    color: rgba(20, 28, 24, 0.62);
   }
 
   &__socials {
@@ -75,14 +75,14 @@
       font-size: 9px;
       font-weight: 700;
       text-transform: uppercase;
-      color: $paper;
-      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: $charcoal;
+      border: 1px solid rgba(20, 28, 24, 0.22);
       border-radius: 50%;
       transition: background $transition, border-color $transition;
 
       &:hover {
-        background: rgba(255, 255, 255, 0.12);
-        border-color: $paper;
+        background: rgba(20, 28, 24, 0.05);
+        border-color: $charcoal;
       }
     }
   }
@@ -99,11 +99,11 @@
 
     a {
       font-size: 12px;
-      color: $paper;
+      color: $charcoal;
       transition: color $transition;
 
       &:hover {
-        color: $clay;
+        color: $brass;
       }
     }
   }
@@ -115,7 +115,7 @@
     font-weight: 700;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.52);
+    color: rgba(20, 28, 24, 0.45);
   }
 
   &__pages {
@@ -131,11 +131,11 @@
       font-family: $serif;
       font-size: 21px;
       line-height: 1.25;
-      color: $paper;
+      color: $charcoal;
       transition: color $transition;
 
       &:hover {
-        color: $clay;
+        color: $brass;
       }
     }
   }
@@ -144,8 +144,8 @@
     display: grid;
     gap: 26px;
     padding: 58px 70px 50px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(20, 28, 24, 0.08);
     border-radius: 14px;
 
     label {
@@ -158,11 +158,11 @@
       justify-content: space-between;
       gap: 12px;
       font-size: 12px;
-      color: rgba(255, 255, 255, 0.56);
+      color: rgba(20, 28, 24, 0.56);
     }
 
     small {
-      color: rgba(255, 255, 255, 0.5);
+      color: rgba(20, 28, 24, 0.45);
       font: inherit;
     }
 
@@ -173,21 +173,21 @@
       padding: 8px 0 10px;
       font-family: $sans;
       font-size: 13px;
-      color: $paper;
+      color: $charcoal;
       background: transparent;
       border: 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.26);
+      border-bottom: 1px solid rgba(20, 28, 24, 0.15);
       outline: none;
       resize: vertical;
       transition: border-color $transition;
 
       &:focus {
-        border-bottom-color: rgba(255, 255, 255, 0.75);
+        border-bottom-color: $charcoal;
       }
     }
 
     select {
-      color: rgba(255, 255, 255, 0.58);
+      color: rgba(20, 28, 24, 0.58);
     }
   }
 
@@ -201,7 +201,7 @@
       height: 20px;
       padding: 0;
       appearance: none;
-      border: 1px solid rgba(255, 255, 255, 0.24);
+      border: 1px solid rgba(20, 28, 24, 0.2);
       border-radius: 3px;
     }
 
@@ -209,7 +209,7 @@
       display: block;
       font-size: 11px;
       line-height: 1.45;
-      color: rgba(255, 255, 255, 0.7);
+      color: rgba(20, 28, 24, 0.7);
     }
   }
 
@@ -240,7 +240,7 @@
     gap: 24px;
     margin-top: 46px;
     padding-top: 24px;
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    border-top: 1px solid rgba(20, 28, 24, 0.08);
     font-size: 12px;
 
     p {
@@ -253,7 +253,7 @@
     gap: 22px;
 
     a:hover {
-      color: $paper;
+      color: $charcoal;
     }
   }
 }
