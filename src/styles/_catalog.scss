@@ -1679,7 +1679,7 @@
   position: relative;
 }
 
-// View PDF button (solid maroon outline button positioned upper to download button)
+// View PDF button (outlined button matching download button style)
 .btn-view-pdf {
   display: inline-flex;
   align-items: center;
@@ -1694,9 +1694,9 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   border-radius: 100px;
-  border: 1.5px solid $brass;
-  background: $brass;
-  color: #ffffff;
+  border: 1.5px solid rgba(20, 28, 24, 0.82);
+  background: transparent;
+  color: $charcoal;
   cursor: pointer;
   margin-bottom: 12px;
   transition: background $transition, border-color $transition, color $transition, transform $transition;
@@ -1706,8 +1706,9 @@
   }
 
   &:hover {
-    background: transparent;
-    color: $brass;
+    background: $charcoal;
+    color: $paper;
+    border-color: $charcoal;
     transform: translateY(-1px);
 
     svg {
