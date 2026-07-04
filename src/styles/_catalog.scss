@@ -1671,12 +1671,14 @@
 
   &__actions {
     flex-shrink: 0;
+    width: 220px;
   }
 }
 
 // Download PDF button (rounded outlines + arrow)
 .download-wrapper {
   position: relative;
+  width: 100%;
 }
 
 // View PDF button (outlined button matching download button style)
@@ -1722,6 +1724,8 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
   padding: 12px 28px;
   font-family: $sans;
   font-size: 12px;
