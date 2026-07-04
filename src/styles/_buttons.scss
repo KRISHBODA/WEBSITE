@@ -28,12 +28,12 @@
   &--primary {
     color: $paper;
     background: linear-gradient(135deg, $clay 0%, $clay-dark 100%);
-    box-shadow: 0 10px 24px -12px rgba(164, 85, 47, 0.7);
+    box-shadow: 0 10px 24px -12px rgba($clay-dark, 0.4);
 
     &:hover {
       background: linear-gradient(135deg, $clay-dark 0%, $clay-dark 100%);
       transform: translateY(-1px);
-      box-shadow: 0 14px 28px -12px rgba(164, 85, 47, 0.8);
+      box-shadow: 0 14px 28px -12px rgba($clay-dark, 0.5);
     }
   }
 

@@ -1,30 +1,30 @@
-// Premium ceramic-tile palette: warm espresso + terracotta + ivory + brass
-// Every neutral carries a warm undertone so the whole scheme feels cohesive.
-$cream: #f7f4ee; // ivory light background
-$sand: #ece3d4; // warm sand
-$paper: #fdfbf7; // porcelain surface
-$charcoal: #211b16; // warm espresso (dark sections + headings)
-$ink: #2f2922; // body text on light
-$stone: #857a6d; // muted taupe secondary text
-$clay: #c06a43; // terracotta accent
-$clay-dark: #a4552f; // deep terracotta (hover)
-$clay-soft: rgba(192, 106, 67, 0.12);
-$brass: #bd9560; // brass/gold fine detail
-$cream-dim: rgba(247, 244, 238, 0.72); // warm text on dark
-$line: rgba(33, 27, 22, 0.13);
-$line-soft: rgba(33, 27, 22, 0.07);
+// Highly Refined Luxury Palette for "TERRA Fine Surfaces"
+// Inspired by natural stones, travertine sand, charcoal slate, and terracotta.
+$paper: #fcfbfa;        // Pure warm white (porcelain/marble surface)
+$cream: #f6f3eb;        // Soft alabaster/travertine background
+$sand: #e6dfd3;         // Cashmere warm gray/sand neutral
+$charcoal: #1c1815;     // Deep slate charcoal for headings and dark areas
+$ink: #2b2520;          // Deep espresso black for body text
+$stone: #8c8273;        // Muted taupe/stone secondary text
+$clay: #a65233;         // Tuscan Burnt Sienna (earthy, sophisticated terracotta)
+$clay-dark: #8c4227;    // Deeper rust for hover states
+$clay-soft: rgba(166, 82, 51, 0.08);
+$brass: #c5a17a;        // Fine brushed champagne/gold detail accent
+$cream-dim: rgba(246, 243, 235, 0.75);
+$line: rgba(28, 24, 21, 0.08);
+$line-soft: rgba(28, 24, 21, 0.04);
 
-// Dark surfaces
-$forest: #1c1712; // footer / deepest section
-$forest-deep: #14100c;
-$forest-soft: rgba(255, 255, 255, 0.06);
+// Dark background surfaces (cohesive with charcoal)
+$forest: #1c1815;       // Consistent slate for dark backgrounds
+$forest-deep: #14110f;  // Deepest obsidian for dark sections
+$forest-soft: rgba(255, 255, 255, 0.05);
 
 // Effects
-$shadow: 0 30px 70px -35px rgba(24, 17, 12, 0.5);
+$shadow: 0 30px 70px -35px rgba(20, 16, 12, 0.5);
 $transition: 0.3s ease;
 
-// Shared warm gradient (espresso -> terracotta) for heroes & bands
-$warm-gradient: linear-gradient(135deg, #1c1712 0%, #402c20 50%, #99512e 100%);
+// Shared warm gradient (espresso -> warm sienna) for premium look (driven by variables)
+$warm-gradient: linear-gradient(135deg, $forest-deep 0%, #3a241b 60%, $clay 100%);
 $overlay-dark: rgba(20, 16, 12, 0.82);
 
 // Radii & sizing
