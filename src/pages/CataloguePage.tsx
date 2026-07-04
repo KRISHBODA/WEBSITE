@@ -6,7 +6,7 @@ import { collections, type Collection } from '../data/tiles'
 // Localized mock metadata for catalog files (sizes, finishes, catalog PDF weight, thickness)
 const catalogueDetails: Record<
   string,
-  { category: string; fileSize: string; thickness: string; description: string; sizes: string[] }
+  { category: string; fileSize: string; thickness: string; description: string; sizes: string[]; pdfUrl: string }
 > = {
   calacatta: {
     category: 'SLAB TILES',
@@ -15,6 +15,7 @@ const catalogueDetails: Record<
     description:
       'Continuous large-format porcelain slabs replicate fine Calacatta marble veins. Contains structural indices, water absorption certifications, and high-gloss edge polishing templates.',
     sizes: ['1200x2400 mm', '1200x1200 mm'],
+    pdfUrl: '/catalogues/calacatta_royale.pdf',
   },
   terrazzo: {
     category: 'DIGITAL FULL BODY TILES',
@@ -23,6 +24,7 @@ const catalogueDetails: Record<
     description:
       'High-definition glazed terrazzo motifs with customized color chips. Includes abrasion resistance ratings (PEI III), slip resistance curves (R9), and kitchen wall layouts.',
     sizes: ['600x600 mm'],
+    pdfUrl: '/catalogues/terrazzo_muse.pdf',
   },
   cemento: {
     category: 'COLOR BODY TILES',
@@ -31,6 +33,7 @@ const catalogueDetails: Record<
     description:
       'Contemporary industrial concrete planks with colored clay bases. Contains details on flexural strength, breaking load, and restoration recommendations.',
     sizes: ['600x1200 mm'],
+    pdfUrl: '/catalogues/cemento_loft.pdf',
   },
   woodline: {
     category: 'FULL BODY TILES',
@@ -39,6 +42,7 @@ const catalogueDetails: Record<
     description:
       'Organic hardwood plank recreations featuring high-fidelity wood textures. Lists scratch hardness coefficients, joint-width guidelines, and bedroom installation layouts.',
     sizes: ['200x1200 mm'],
+    pdfUrl: '/catalogues/woodline_reserve.pdf',
   },
   rockdeck: {
     category: 'FULL BODY TILES',
@@ -47,6 +51,7 @@ const catalogueDetails: Record<
     description:
       'Heavy-duty 20mm structured vitrified tiles engineered for load-bearing driveways, garden pathways, and poolsides. Details high-grip parameters (R11) and subbase preparations.',
     sizes: ['600x600 mm'],
+    pdfUrl: '/catalogues/rockdeck_pavers.pdf',
   },
   travertine: {
     category: 'SLAB TILES',
@@ -55,6 +60,7 @@ const catalogueDetails: Record<
     description:
       'Fine vein-cut Italian travertine duplicates utilizing carved glaze finishes. Lists nominal coverage parameters, chemical resistance logs, and facade cladding structures.',
     sizes: ['1200x1200 mm'],
+    pdfUrl: '/catalogues/travertine_classico.pdf',
   },
   carrara: {
     category: 'SLAB TILES',
@@ -63,6 +69,7 @@ const catalogueDetails: Record<
     description:
       'Classic Carrara marble recreation in high-sheen polished formats. Details water absorption ratings (< 0.05%), rectified edge tolerances, and dining room mockups.',
     sizes: ['800x1600 mm'],
+    pdfUrl: '/catalogues/carrara_venato.pdf',
   },
   emperador: {
     category: 'COLOR BODY TILES',
@@ -71,6 +78,7 @@ const catalogueDetails: Record<
     description:
       'Deep bronze marble vein configurations with mirror gloss polishes. Includes safety guidelines, floor washing instructions, and corporate lobby designs.',
     sizes: ['800x1600 mm'],
+    pdfUrl: '/catalogues/emperador_bronze.pdf',
   },
 }
 
@@ -92,6 +100,7 @@ function CatalogueRow({ collection }: { collection: Collection }) {
     thickness: '9.5 MM',
     description: 'Tile specification brochure.',
     sizes: ['600x600 mm'],
+    pdfUrl: '#',
   }
 
   const [progress, setProgress] = useState(0)
@@ -139,6 +148,18 @@ function CatalogueRow({ collection }: { collection: Collection }) {
       </div>
 
       <div className="catalogue-row-card__actions">
+        <a
+          href={details.pdfUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-view-pdf"
+        >
+          <span>View Brochure</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
+          </svg>
+        </a>
+
         {/* Custom outlined download button matching screenshot */}
         <div className="download-wrapper">
           <button

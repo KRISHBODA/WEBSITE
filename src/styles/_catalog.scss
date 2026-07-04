@@ -1679,6 +1679,43 @@
   position: relative;
 }
 
+// View PDF button (solid maroon outline button positioned upper to download button)
+.btn-view-pdf {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 28px;
+  font-family: $sans;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 100px;
+  border: 1.5px solid $brass;
+  background: $brass;
+  color: #ffffff;
+  cursor: pointer;
+  margin-bottom: 12px;
+  transition: background $transition, border-color $transition, color $transition, transform $transition;
+
+  svg {
+    transition: transform $transition;
+  }
+
+  &:hover {
+    background: transparent;
+    color: $brass;
+    transform: translateY(-1px);
+
+    svg {
+      transform: translate(1px, -1px);
+    }
+  }
+}
+
 .btn-download-pdf {
   display: inline-flex;
   align-items: center;
