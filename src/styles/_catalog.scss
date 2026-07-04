@@ -23,7 +23,7 @@
   &:hover {
     transform: translateY(-4px);
     box-shadow: $shadow;
-    border-color: rgba(212, 175, 55, 0.35); // Soft gold hover border
+    border-color: rgba(138, 30, 52, 0.35); // Soft maroon hover border
   }
 
   &__media {
@@ -523,7 +523,7 @@
   &:hover {
     transform: translateY(-5px);
     box-shadow: $shadow-lg;
-    border-color: rgba(212, 175, 55, 0.35); // Gold hover border
+    border-color: rgba(138, 30, 52, 0.35); // Maroon hover border
   }
 
   &__media {
@@ -1315,7 +1315,7 @@
   &:hover {
     transform: translateY(-5px);
     box-shadow: $shadow-lg;
-    border-color: rgba(212, 175, 55, 0.35);
+    border-color: rgba(138, 30, 52, 0.35);
   }
 
   .card-media {

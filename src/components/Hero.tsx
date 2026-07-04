@@ -1,7 +1,5 @@
 import { useEffect, useState, useRef } from 'react'
-import { Link } from 'react-router-dom'
 import { photo, type PhotoKey } from '../data/images'
-import { paths } from '../routes/paths'
 
 type Slide = {
   id: string
@@ -68,9 +66,7 @@ export default function Hero() {
     setIndex((current) => (current + 1) % slides.length)
   }
 
-  const handleDotClick = (i: number) => {
-    setIndex(i)
-  }
+
 
   const active = slides[index]
 
@@ -101,9 +97,6 @@ export default function Hero() {
       <div className="hero__overlay" aria-hidden="true" />
 
       <div className="container hero__inner">
-        <span className="eyebrow eyebrow--light hero__reveal-eyebrow">
-          {active.eyebrow}
-        </span>
         
         {/* We key the title so that the word animations re-trigger on slide change */}
         <h1 className="hero__title" key={`title-${index}`}>
@@ -113,33 +106,6 @@ export default function Hero() {
         <p className="hero__subtitle" key={`subtitle-${index}`}>
           {active.subtitle}
         </p>
-
-        <div className="hero__actions">
-          <Link to={paths.collections} className="btn btn--primary">
-            Explore Collection
-          </Link>
-          <Link to={paths.contact} className="btn btn--secondary">
-            Request Catalog
-          </Link>
-        </div>
-
-        <div className="hero__footer">
-          <div className="hero__dots" role="tablist">
-            {slides.map((slide, i) => (
-              <button
-                key={slide.id}
-                type="button"
-                role="tab"
-                aria-selected={i === index}
-                aria-label={`Slide ${i + 1}`}
-                className={`hero__dot ${i === index ? 'is-active' : ''}`}
-                onClick={() => handleDotClick(i)}
-              >
-                <span className="hero__dot-progress" />
-              </button>
-            ))}
-          </div>
-        </div>
       </div>
 
       <button

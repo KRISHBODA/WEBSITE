@@ -82,3 +82,43 @@
     border-color: $paper;
   }
 }
+
+// Floating WhatsApp Chat Button
+.whatsapp-float {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35);
+  z-index: 999;
+  transition: transform $transition, box-shadow $transition, background $transition;
+
+  &:hover {
+    transform: scale(1.08) translateY(-2px);
+    box-shadow: 0 14px 32px rgba(37, 211, 102, 0.45);
+    background: #20ba5a;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  @media (max-width: $bp-sm) {
+    bottom: 24px;
+    right: 24px;
+    width: 52px;
+    height: 52px;
+
+    svg {
+      width: 26px;
+      height: 26px;
+    }
+  }
+}
